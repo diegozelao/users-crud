@@ -2,8 +2,8 @@
 
 export default function EntryPage() {
   return (
-    <div className="initBody">
-      <h1>Entry Page</h1>
+    <div>
+      <h2>Entry Page</h2>
     </div>
   )
 }

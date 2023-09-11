@@ -1,6 +1,34 @@
-/* Login Grid */
-.loginContainer {
-  @apply flex flex-1 justify-center items-center;
-  @apply sm:grid-cols-2 h-screen bg-zinc-800 text-red-500;
-  
+.containerLogin {
+  @apply max-w-[400px] max-h-[60vh] w-full p-2 py-8 rounded-3xl;
+  @apply bg-zinc-600;
+}
+
+.btnContainerLogin {
+  @apply w-full p-4 my-3 rounded-2xl;
+  @apply text-white bg-indigo-700 hover:bg-indigo-500;
+  @apply shadow-lg shadow-zinc-800;
+}
+
+.flexCenter1Container {
+  @apply hidden sm:block;
+  @apply bg-zinc-500;
+}
+
+
+@screen sm {
+  .flexCenter1Container {
+    @apply flex justify-center items-center;
+  }
+}
+
+@screen md {
+  .flexCenter1Container {
+    @apply flex justify-center items-center;
+  }
+}
+
+@screen lg {
+  .flexCenter1Container {
+    @apply flex justify-center items-center;
+  }
 }

@@ -1,5 +1,12 @@
 .initBody {
   @apply flex flex-1 justify-center items-center;
   @apply sm:grid-cols-2 h-screen bg-zinc-800 text-red-500;
-  
 }
+
+.containerFlexFull {
+  @apply w-full h-full;
+  @apply flex;
+  @apply justify-center items-center;
+  /* @apply bg-zinc-800; */
+}
+

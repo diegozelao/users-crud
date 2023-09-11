@@ -1,7 +1,8 @@
-import EntryPage from "./pages/EntryPage"
+import Routes from "@/router/IndexRoutes";
+// import EntryPage from "./pages/EntryPage"
 function App() {
   return (
-    <EntryPage />
+    <Routes />
   )
 }
 

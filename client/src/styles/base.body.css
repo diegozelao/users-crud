@@ -1,0 +1,5 @@
+.initBody {
+  @apply flex flex-1 justify-center items-center;
+  @apply sm:grid-cols-2 h-screen bg-zinc-800 text-red-500;
+  
+}

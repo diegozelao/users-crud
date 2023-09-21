@@ -25,6 +25,7 @@
       "@/components/*": ["./components/*"],
       "@/pages/*": ["./pages/*"],
       "@/router/*": ["./router/*"],
+      "@/styles/*": ["./styles/*"],
       "@/*": ["./src/*"],
     }
 

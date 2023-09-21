@@ -1,0 +1,39 @@
+.containerAuth {
+  @apply max-w-[400px] min-h-[60vh] w-full p-2 py-8 rounded-3xl;
+  @apply bg-zinc-600;
+}
+
+
+.flexCenter1Container {
+  @apply hidden sm:block;
+  @apply bg-zinc-500;
+}
+
+
+@screen sm {
+  .flexCenter1Container {
+    @apply flex items-center justify-center;
+  }
+}
+
+@screen md {
+  .flexCenter1Container {
+    @apply flex items-center justify-center;
+  }
+}
+
+@screen lg {
+  .flexCenter1Container {
+    @apply flex items-center justify-center;
+  }
+}
+@screen xl {
+  .containerAuth {
+    @apply min-h-[70vh];
+  }
+}
+@screen 2xl{
+  .containerAuth {
+    @apply min-h-[30vh];
+  }
+}

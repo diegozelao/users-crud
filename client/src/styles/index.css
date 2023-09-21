@@ -1,5 +1,4 @@
 @import "base.body.css";
-@import "component.login.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

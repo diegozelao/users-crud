@@ -1,0 +1,15 @@
+.btnContainerRegister {
+  /* add */
+  /* @apply w-full p-4 my-3 rounded-2xl; */
+}
+
+@screen xl {
+  .containerAuth {
+    @apply min-h-[70vh];
+  }
+}
+@screen 2xl{
+  .containerAuth {
+    @apply min-h-[30vh];
+  }
+}

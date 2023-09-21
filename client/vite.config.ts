@@ -13,4 +13,7 @@ export default defineConfig({
     }
   },
   plugins: [react(), alias()],
+  server: {
+    port: 3001
+  }
 })

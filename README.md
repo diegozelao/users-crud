@@ -9,8 +9,7 @@
 ## After run 'DB', can run all containers
 
   ```bash
-    docker compose  -f "docker-compose.yml" up -d --build db
-    && docker compose -f "docker-compose.yml" up -d --build
+    docker compose  -f "docker-compose.yml" up -d --build db && docker compose -f "docker-compose.yml" up -d --build
   ```
 ## Stop docker compose 
 

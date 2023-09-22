@@ -1,3 +1,4 @@
+import useAuthentication from '@/hooks/useAuthentication'
 import { 
   Route,
   useLocation,
@@ -13,11 +14,12 @@ interface Props {
 export default function PrivateRoute({ url, children, isLoggedIn }: Props) {
   const location = useLocation()
   const navigate = useNavigate()
+  const {isLogged} = useAuthentication()
   // const isLoggedIn = false
   console.log(isLoggedIn, location, navigate)
   return (
     <Route path={url} element={
-      isLoggedIn ? children : <Navigate to="/" replace />
+      isLogged ? children : <Navigate to="/" replace />
     } />
 
   )

@@ -1,16 +1,22 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useAtom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils'
 
+const isLoggedIn = atomWithStorage('isLoggedIn', false)
 
-export function useAuthentication() {
-  const [isRegister , setIsRegister] = useState(false)
-  const toggleAuthPage = () => {
-    setIsRegister(!isRegister)
+export const useAuthentication = () => {
+  const [isLogged, setIsLogged] = useAtom(isLoggedIn)
+  // const [isLogged, setIsLogged] = useState(false)
+
+  const handleLogged = () => {
+    setIsLogged(true)
   }
 
   useEffect(() => {
+    
+  }, [isLogged])
 
-  }, [isRegister])
-
-  return {isRegister, toggleAuthPage}
+  return { isLogged,  handleLogged }
 }
+
+export default useAuthentication

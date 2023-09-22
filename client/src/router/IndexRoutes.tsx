@@ -7,34 +7,25 @@ import { useState } from 'react'
 import EntryPage from '@/pages/EntryPage'
 
 import ProtectedRoute from '@/components/ProtectedRoute'
+import useAuthentication from '@/hooks/useAuthentication'
 
 
 
 export default function IndexRoutes() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const {isLogged} = useAuthentication()
 
-  const setLoggdIn = () => {
-    setIsLoggedIn(true)
-  }
-
-  function checkLogin() {
-    if(isLoggedIn) {
-      return true
-    }
-    return false
-  }
-
+  console.log(isLogged, 'isLogged')
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
           <>
-            {isLoggedIn ? <Home /> : <Login loggedIn={setLoggdIn}/>} 
+            {isLogged ? <Home /> : <Login isLogged={isLogged}/>} 
           </>
         }/>
         <Route path='entry'
           element={
-            <ProtectedRoute isLoggedIn={checkLogin()}>
+            <ProtectedRoute isLoggedIn={isLogged}>
               <EntryPage />
             </ProtectedRoute>
           }

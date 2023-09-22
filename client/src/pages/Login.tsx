@@ -1,15 +1,15 @@
 import AuthLogin from "@/components/Auth/AuthLogin"
 import AuthRegister from "@/components/Auth/AuthRegister"
-import { useAuthentication } from '../hooks/useAuthentication'
+import { useToggleAuthPage } from '../hooks/useToggleAuthPage'
 import '@/styles/pages/login.css'
 
 
 interface Props {
-  loggedIn: () => void
+  isLogged: boolean
 }
-export default function Login({loggedIn}: Props) {
-  const {isRegister, toggleAuthPage} = useAuthentication()
-  console.log('login', loggedIn)
+export default function Login({isLogged}: Props) {
+  const {isRegister, toggleAuthPage} = useToggleAuthPage()
+  console.log('login', isLogged)
 
   // const handleRegister = useCallback(() => {
   //   setIsRegister(true)

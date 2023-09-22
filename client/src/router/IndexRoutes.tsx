@@ -3,7 +3,6 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Home from '@/pages/Home'
 import Login from '@/pages/Login'
 import NotFound from '@/pages/NotFound'
-import { useState } from 'react'
 import EntryPage from '@/pages/EntryPage'
 
 import ProtectedRoute from '@/components/ProtectedRoute'

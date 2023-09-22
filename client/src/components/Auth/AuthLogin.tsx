@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form"
 import requestServices from "@/services/requestApi"
-import axios from "axios"
 
 
 
@@ -22,8 +21,6 @@ export default function AuthLogin(props: Props) {
 
   const {
     register,
-    setValue,
-    getValues,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>()
@@ -45,7 +42,9 @@ export default function AuthLogin(props: Props) {
         <h2 className="p-8 text-4xl font-bold text-center text-white">Login</h2>
         <div className="flex flex-col gap-5 p-3">
           <input {...register("username", { required: true })} className="py-2 rounded-lg" type="text" placeholder="Username" />
+            {errors.username && <span>This field is required</span>}
           <input {...register("password", { required: true })} className="py-2 rounded-lg" type="password" placeholder="Password" />
+            {errors.password && <span>This field is required</span>}
         </div>
         <div className="flex flex-col p-2">
           <button className="btnContainerLogin" type="submit">Login</button>

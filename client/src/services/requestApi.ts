@@ -1,5 +1,3 @@
-import axios from 'axios';
-import { useAuthentication } from '@/hooks/useAuthentication'
 import AuthServices from './authServices'
 import { apiInstance } from './apiInstance';
 

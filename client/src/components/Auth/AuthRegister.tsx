@@ -21,8 +21,6 @@ export default function AuthRegister(props: Props) {
 
   const {
     register,
-    setValue,
-    getValues,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>()
@@ -41,9 +39,13 @@ export default function AuthRegister(props: Props) {
         <h2 className="p-8 text-4xl font-bold text-center text-white">Register</h2>
         <div className="flex flex-col gap-5 p-3">
           <input {...register("name", { required: true })} className="py-2 rounded-lg" type="text" placeholder="Nome Completo" />
+            {errors.name && <span>This field is required</span>}
           <input {...register('username', {required: true})} className="py-2 rounded-lg" type="text" placeholder="Username" />
+            {errors.username && <span>This field is required</span>}
           <input {...register('email', {required: true})} className="py-2 rounded-lg" type="email" placeholder="exemple@example.com" />
+            {errors.email && <span>This field is required</span>}
           <input {...register('password', {required: true})} className="py-2 rounded-lg" type="password" placeholder="Password" />
+            {errors.password && <span>This field is required</span>}
         </div>
         <div className="flex flex-row gap-2 p-2">
           <button type='submit' className="bg-blue-800 btnContainerLogin hover:bg-blue-500">Register</button>

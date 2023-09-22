@@ -12,18 +12,6 @@ services:
       - server
     networks:
       - app-network
-  server:
-    container_name: server
-    # restart: always
-    build:
-      context: ./server
-      dockerfile: dockerfile
-    ports:
-      - '3000:3000'
-    depends_on:
-      - db
-    networks:
-      - app-network
   db:
     container_name: postgresql
     image: postgres:latest
@@ -35,6 +23,24 @@ services:
       - '5432:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  server:
+    container_name: server
+    restart: always
+    build:
+      context: ./server
+      dockerfile: dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - app-network
 volumes:

@@ -4,6 +4,7 @@ COPY package*.json ./
 COPY tsconfig*.json ./
 RUN npm install
 COPY . .
+RUN npm run prisma:initialize
 RUN npm run prisma:generate
 RUN npm run prisma:install
 RUN npm run build
